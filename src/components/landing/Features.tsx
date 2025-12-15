@@ -5,14 +5,14 @@ const features = [
   {
     id: "checkout",
     icon: ShoppingCart,
-    title: "Checkout",
-    description: "HelaPoint makes checkout simple—search fast, scan barcodes, and finalize sales with fewer taps.",
+    title: "Fast Checkout",
+    description: "Keep the queue moving—search fast, scan barcodes, and finalize sales with fewer taps.",
     details: [
       "Product search (by name, brand, barcode, item code)",
       "Quick category shortcuts for common items",
-      "Cart management (add items, update quantities)",
-      "Retail/Wholesale mode toggle (store-configurable)",
-      "Receipt flow (generate order summary, receipt screens)"
+      "Cart management with quantity updates",
+      "Retail/Wholesale price mode toggle",
+      "Receipt generation and printing"
     ]
   },
   {
@@ -24,7 +24,7 @@ const features = [
       "Camera-based barcode scanning",
       "Instant product lookup",
       "Multiple barcode format support",
-      "Works offline"
+      "Works fully offline"
     ]
   },
   {
@@ -34,82 +34,73 @@ const features = [
     description: "Keep your catalog organized and your stock accurate—with workflows designed for daily store operations.",
     details: [
       "Product catalog management",
-      "Categories management",
-      "Inventory list with search + filters",
-      "Batch product creation workflows",
-      "Soft delete + undo flows"
+      "Categories and pricing",
+      "Stock level tracking",
+      "Batch product import",
+      "Low stock alerts"
     ]
   },
   {
     id: "credit",
     icon: Users,
-    title: "Sales & Credit Tracking",
-    description: "Manage customer credit with clear balances, payment recording, and due-date visibility.",
+    title: "Customer Credit Tracking",
+    description: "Track who owes what, record payments, and never lose money to forgotten debts again.",
     details: [
-      "Customer credit balances tracking",
-      "Record payments against balances",
-      "View customer credit details",
-      "Due-date status monitoring"
+      "Customer credit balances",
+      "Due date tracking",
+      "Payment recording",
+      "Credit history per customer",
+      "Outstanding balance reports"
     ]
   },
   {
-    id: "insights",
+    id: "multicashier",
     icon: BarChart3,
-    title: "Account & Insights",
-    description: "Your store data stays accessible—review performance, history, and key actions from one place.",
+    title: "Multi-Cashier Support",
+    description: "Each staff member logs in separately. Know exactly who sold what and when.",
     details: [
-      "Store and business profile cards",
-      "Overview metrics (dashboard-style)",
-      "Sales history views",
-      "Quick actions shortcuts"
+      "Individual cashier logins",
+      "Transaction accountability",
+      "Shift reports per cashier",
+      "Secure PIN or password access",
+      "Manager oversight dashboard"
     ]
   },
   {
     id: "multistore",
     icon: Building2,
-    title: "Multi-Store Setup",
-    description: "Built for growing businesses—manage one shop or multiple branches with structured business/store selection.",
+    title: "Multi-Store Sync",
+    description: "Manage one shop or many—sync data across all locations when connected.",
     details: [
-      "Create or select a business",
-      "Add one or more stores",
-      "Switch store context as needed",
-      "Centralized management"
-    ]
-  },
-  {
-    id: "backups",
-    icon: Database,
-    title: "Backups & Restore",
-    description: "Your data is yours—export backups whenever you want and restore quickly when needed.",
-    details: [
-      "Hourly local backups",
-      "Manual export to Drive, Files, etc.",
-      "Restore from backup JSON file",
-      "Data ownership guaranteed"
+      "Create multiple stores",
+      "Switch between stores easily",
+      "Sync when online",
+      "Offline operation per store",
+      "Centralized business overview"
     ]
   },
   {
     id: "sync",
     icon: Cloud,
-    title: "Cloud Sync",
-    description: "Sell offline and sync when online—designed to handle real retail conditions.",
+    title: "Background Sync",
+    description: "Sell offline and sync automatically when internet returns. Your data stays safe.",
     details: [
-      "Background sync when connected",
-      "Seamless offline-to-online transition",
+      "Automatic background sync",
+      "Conflict resolution",
       "Data consistency across devices",
-      "Conflict resolution"
+      "Works in low-connectivity areas"
     ]
   },
   {
     id: "printing",
     icon: Printer,
     title: "Receipt Printing",
-    description: "Connect to a compatible Bluetooth printer and streamline receipt workflows.",
+    description: "Connect to a Bluetooth printer and print receipts automatically after each sale.",
     details: [
-      "Bluetooth device scanning + connect",
+      "Bluetooth printer connection",
       "Save preferred printer",
-      "Auto-print preferences",
-      "Multiple printer support"
+      "Auto-print option",
+      "Custom receipt format"
     ]
   }
 ];

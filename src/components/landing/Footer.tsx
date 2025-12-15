@@ -55,7 +55,7 @@ const Footer = () => {
         <Separator className="mb-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2024 HelaPoint. All rights reserved.</p>
+          <p>© 2025 HelaPoint. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-foreground transition-colors">Twitter</a>
             <a href="#" className="hover:text-foreground transition-colors">LinkedIn</a>

@@ -25,7 +25,6 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost">Sign In</Button>
             <Button>Request Demo</Button>
           </div>
 
@@ -47,7 +46,6 @@ const Header = () => {
               <a href="#use-cases" className="text-muted-foreground hover:text-foreground transition-colors">Use Cases</a>
               <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
               <div className="flex flex-col gap-2 pt-4">
-                <Button variant="ghost">Sign In</Button>
                 <Button>Request Demo</Button>
               </div>
             </nav>

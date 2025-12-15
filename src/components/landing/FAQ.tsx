@@ -8,35 +8,35 @@ import {
 const faqs = [
   {
     question: "Does HelaPoint work offline?",
-    answer: "HelaPoint is designed with offline-first workflows so day-to-day operations can continue during connectivity issues. Data syncs automatically when you're back online."
+    answer: "Yes! HelaPoint is built offline-first so your store keeps running during network outages and power cuts. All transactions are saved locally and sync automatically when connectivity returns."
   },
   {
-    question: "Can I scan barcodes?",
-    answer: "Yes. HelaPoint supports camera-based barcode scanning for quick product lookup. Just point your device camera at any barcode to instantly find and add products to your cart."
+    question: "How does multi-cashier tracking prevent losses?",
+    answer: "Each cashier logs in with their own account. Every sale, refund, and credit transaction is recorded with the cashier's name and timestamp. You can see exactly who sold what and when—no more disputes or missing money."
   },
   {
-    question: "Can I manage inventory and categories?",
-    answer: "Yes. You can organize products into categories and manage stock and pricing. The system includes batch workflows for faster product onboarding and daily inventory updates."
+    question: "Can I track customer credit and due dates?",
+    answer: "Absolutely. HelaPoint has built-in credit management—record what customers owe, set due dates, log payments, and see outstanding balances at a glance. No more paper ledgers or forgotten debts."
   },
   {
-    question: "Do you support wholesale pricing?",
-    answer: "HelaPoint supports retail/wholesale modes when enabled for a store. You can easily switch between pricing modes during checkout based on your customer type."
+    question: "Is HelaPoint available on my Android phone?",
+    answer: "Yes! HelaPoint is available on the Google Play Store. It works on Android phones and tablets, so you can use the device you already have."
   },
   {
-    question: "Can I track customer credit and payments?",
-    answer: "Yes. You can track customer balances and record payments. The system monitors due dates and provides clear visibility into outstanding balances."
+    question: "Can I manage multiple stores?",
+    answer: "Yes. Create multiple stores under one business account. Data syncs across all stores when online, and each store can operate independently when offline."
   },
   {
-    question: "How do backups work?",
-    answer: "HelaPoint supports scheduled local backups and a user-controlled export/restore flow. You can export your data to Google Drive, local files, or any storage location of your choice."
+    question: "How does barcode scanning work?",
+    answer: "Just point your phone camera at any barcode. HelaPoint instantly finds the product and adds it to the cart. Great for busy checkout lines and large product catalogs."
   },
   {
-    question: "Can I use a Bluetooth receipt printer?",
-    answer: "HelaPoint includes Bluetooth printer connection workflows. You can scan for devices, connect to your printer, and save preferences for automatic printing."
+    question: "What about receipt printing?",
+    answer: "Connect any compatible Bluetooth receipt printer. HelaPoint remembers your printer and can auto-print receipts after each sale."
   },
   {
-    question: "Is HelaPoint available on iOS and Android?",
-    answer: "HelaPoint is built as a cross-platform app and can be deployed to both iOS and Android devices, giving you flexibility in hardware choices."
+    question: "Do I need internet to use HelaPoint?",
+    answer: "No. HelaPoint works fully offline. You can sell, manage inventory, and track credit without any internet. When you do connect, everything syncs automatically in the background."
   }
 ];
 
