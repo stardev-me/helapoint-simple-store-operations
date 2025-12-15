@@ -28,7 +28,7 @@ const Comparison = () => {
   return (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Why Choose HelaPoint?
           </h2>
@@ -39,7 +39,7 @@ const Comparison = () => {
 
         {/* Pain Points */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
-          <Card className="bg-destructive/5 border-destructive/20">
+          <Card className="bg-destructive/5 border-destructive/20 animate-fade-in hover:-translate-y-1 transition-transform" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
             <CardHeader>
               <CardTitle className="text-lg">Tired of Lost Sales from Outages?</CardTitle>
             </CardHeader>
@@ -49,7 +49,7 @@ const Comparison = () => {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-destructive/5 border-destructive/20">
+          <Card className="bg-destructive/5 border-destructive/20 animate-fade-in hover:-translate-y-1 transition-transform" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
             <CardHeader>
               <CardTitle className="text-lg">Manual Credit Books Causing Disputes?</CardTitle>
             </CardHeader>
@@ -59,7 +59,7 @@ const Comparison = () => {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-destructive/5 border-destructive/20">
+          <Card className="bg-destructive/5 border-destructive/20 animate-fade-in hover:-translate-y-1 transition-transform" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
             <CardHeader>
               <CardTitle className="text-lg">Staff Disputes Over Sales?</CardTitle>
             </CardHeader>
