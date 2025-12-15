@@ -36,7 +36,7 @@ const Testimonials = () => {
   return (
     <section className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             What Store Owners Say
           </h2>
@@ -47,7 +47,11 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-card border-border hover:shadow-lg transition-shadow">
+            <Card 
+              key={index} 
+              className="bg-card border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'both' }}
+            >
               <CardContent className="p-6">
                 <Quote className="w-8 h-8 text-primary/30 mb-4" />
                 <div className="flex gap-1 mb-4">

@@ -33,7 +33,7 @@ const ValueProps = () => {
   return (
     <section className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Everything you need to run your store
           </h2>
@@ -44,9 +44,13 @@ const ValueProps = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {valueProps.map((prop, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50">
+            <Card 
+              key={index} 
+              className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50 hover:-translate-y-1 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'both' }}
+            >
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                   <prop.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">

@@ -8,7 +8,7 @@ const Hero = () => {
     <section className="pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left animate-fade-in">
             <Badge variant="secondary" className="mb-6 inline-flex items-center gap-2">
               <Wifi className="w-3 h-3" />
               Available on Google Play Store
@@ -66,12 +66,12 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/30 rounded-3xl blur-3xl opacity-50" />
+          <div className="relative animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/30 rounded-3xl blur-3xl opacity-50 animate-pulse" />
             <img
               src={heroImage}
               alt="HelaPoint POS system showing checkout and credit tracking on Android tablet"
-              className="relative rounded-2xl shadow-2xl w-full border border-border"
+              className="relative rounded-2xl shadow-2xl w-full border border-border hover:scale-[1.02] transition-transform duration-500"
             />
           </div>
         </div>

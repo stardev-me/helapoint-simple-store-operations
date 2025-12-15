@@ -109,7 +109,7 @@ const Features = () => {
   return (
     <section id="features" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Powerful features for modern retail
           </h2>
@@ -118,13 +118,13 @@ const Features = () => {
           </p>
         </div>
 
-        <Tabs defaultValue="checkout" className="w-full">
+        <Tabs defaultValue="checkout" className="w-full animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
           <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent h-auto mb-8">
             {features.map((feature) => (
               <TabsTrigger
                 key={feature.id}
                 value={feature.id}
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground px-4 py-2 rounded-full border border-border data-[state=active]:border-primary"
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground px-4 py-2 rounded-full border border-border data-[state=active]:border-primary hover:scale-105 transition-transform"
               >
                 <feature.icon className="w-4 h-4 mr-2" />
                 {feature.title}

@@ -37,7 +37,7 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             How it works
           </h2>
@@ -48,7 +48,11 @@ const HowItWorks = () => {
 
         <div className="max-w-4xl mx-auto">
           {steps.map((step, index) => (
-            <div key={index} className="relative flex gap-6 pb-12 last:pb-0">
+            <div 
+              key={index} 
+              className="relative flex gap-6 pb-12 last:pb-0 animate-fade-in"
+              style={{ animationDelay: `${index * 0.15}s`, animationFillMode: 'both' }}
+            >
               {/* Connecting line */}
               {index !== steps.length - 1 && (
                 <div className="absolute left-6 top-14 w-0.5 h-full bg-border" />
@@ -56,7 +60,7 @@ const HowItWorks = () => {
               
               {/* Step number and icon */}
               <div className="relative flex-shrink-0">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300">
                   <step.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
               </div>
