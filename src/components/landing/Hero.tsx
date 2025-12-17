@@ -22,7 +22,7 @@ const Hero = () => {
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               Sell Without Interruptions:{" "}
-              <span className="text-primary">The Offline-First POS</span> with Built-in Credit Tracking
+              <span className="text-primary">The Offline-First POS</span> with Built-in Credit Tracking, Multi-Business & Multi-Store Support
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
