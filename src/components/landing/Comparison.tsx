@@ -10,8 +10,8 @@ const features = [
   { name: "Barcode Scanning", helapoint: true, loyverse: true, square: true },
   { name: "Receipt Printing", helapoint: true, loyverse: true, square: true },
   { name: "Works in Low-Connectivity Areas", helapoint: true, loyverse: "partial", square: false },
-  { name: "Designed for Africa & Asia Markets", helapoint: true, loyverse: false, square: false },
-  { name: "Android-First Mobile App", helapoint: true, loyverse: true, square: "partial" },
+  { name: "Owner Business Dashboard", helapoint: true, loyverse: "partial", square: true },
+  { name: "Android & Desktop Apps", helapoint: true, loyverse: true, square: "partial" },
 ];
 
 const FeatureIcon = ({ value }: { value: boolean | string }) => {
@@ -32,8 +32,8 @@ const Comparison = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Why Choose HelaPoint?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Built specifically for the challenges of emerging markets—where connectivity is unreliable, credit is essential, and every sale counts.
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Built for real-world retail challenges—where connectivity can be unreliable, credit is essential, and every sale counts.
           </p>
         </div>
 

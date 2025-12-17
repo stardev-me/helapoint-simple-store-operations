@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Play, Wifi, Users, CreditCard, Scan, Building2, Shield } from "lucide-react";
+import { ArrowRight, Play, Wifi, Users, CreditCard, Scan, Building2, Shield, Monitor, Smartphone } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
@@ -9,10 +9,16 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left animate-fade-in">
-            <Badge variant="secondary" className="mb-6 inline-flex items-center gap-2">
-              <Wifi className="w-3 h-3" />
-              Available on Google Play Store
-            </Badge>
+            <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
+              <Badge variant="secondary" className="inline-flex items-center gap-2">
+                <Smartphone className="w-3 h-3" />
+                Google Play Store
+              </Badge>
+              <Badge variant="outline" className="inline-flex items-center gap-2">
+                <Monitor className="w-3 h-3" />
+                Desktop Available
+              </Badge>
+            </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               Sell Without Interruptions:{" "}
@@ -20,7 +26,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
-              Keep selling during network outages, track customer dues effortlessly, and manage multiple cashiers securely—all in one simple app built for busy stores in Africa & Asia.
+              Keep selling during network outages, track customer dues effortlessly, and manage multiple cashiers securely—all in one simple app built for busy stores.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
@@ -62,7 +68,7 @@ const Hero = () => {
             </div>
 
             <p className="mt-6 text-sm text-muted-foreground">
-              Trusted by 500+ stores across Kenya, Nigeria, Tanzania & India
+              Trusted by 500+ stores worldwide
             </p>
           </div>
 
