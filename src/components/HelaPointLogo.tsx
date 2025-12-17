@@ -6,84 +6,136 @@ const HelaPointLogo = ({ className = "w-10 h-10" }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Background gradient circle with 3D effect */}
       <defs>
-        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="hsl(var(--primary))" />
-          <stop offset="100%" stopColor="hsl(var(--primary) / 0.7)" />
+        {/* Main gradient for the background */}
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#6366f1" />
+          <stop offset="50%" stopColor="#4f46e5" />
+          <stop offset="100%" stopColor="#4338ca" />
         </linearGradient>
-        <linearGradient id="shineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="white" stopOpacity="0.4" />
-          <stop offset="50%" stopColor="white" stopOpacity="0" />
+        
+        {/* Highlight gradient for 3D effect */}
+        <linearGradient id="highlightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#818cf8" />
+          <stop offset="100%" stopColor="#6366f1" />
         </linearGradient>
-        <linearGradient id="shadowGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="black" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="black" stopOpacity="0" />
+        
+        {/* Shadow gradient for depth */}
+        <linearGradient id="shadowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#3730a3" />
+          <stop offset="100%" stopColor="#312e81" />
         </linearGradient>
+        
+        {/* H letter gradient */}
+        <linearGradient id="letterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#e0e7ff" />
+        </linearGradient>
+        
+        {/* Shine effect */}
+        <linearGradient id="shineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity="0.5" />
+          <stop offset="50%" stopColor="#ffffff" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+        </linearGradient>
+        
+        {/* Drop shadow filter */}
         <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.3" />
+          <feDropShadow dx="0" dy="4" stdDeviation="3" floodColor="#1e1b4b" floodOpacity="0.4" />
+        </filter>
+        
+        {/* Inner shadow for H */}
+        <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="#ffffff" floodOpacity="0.3" />
         </filter>
       </defs>
 
-      {/* Main circle background */}
-      <circle cx="32" cy="32" r="30" fill="url(#bgGradient)" filter="url(#dropShadow)" />
+      {/* Background rounded square with 3D effect */}
+      {/* Bottom shadow layer */}
+      <rect
+        x="6"
+        y="8"
+        width="52"
+        height="52"
+        rx="14"
+        fill="url(#shadowGrad)"
+      />
       
-      {/* 3D highlight on top */}
-      <ellipse cx="26" cy="20" rx="16" ry="10" fill="url(#shineGradient)" />
+      {/* Main background */}
+      <rect
+        x="4"
+        y="4"
+        width="52"
+        height="52"
+        rx="14"
+        fill="url(#bgGrad)"
+        filter="url(#dropShadow)"
+      />
       
-      {/* Shopping cart base */}
-      <g filter="url(#dropShadow)">
-        {/* Cart body */}
+      {/* Top highlight edge for 3D */}
+      <rect
+        x="4"
+        y="4"
+        width="52"
+        height="26"
+        rx="14"
+        fill="url(#highlightGrad)"
+        clipPath="inset(0 0 50% 0)"
+      />
+      
+      {/* Shine overlay */}
+      <ellipse
+        cx="22"
+        cy="18"
+        rx="18"
+        ry="12"
+        fill="url(#shineGrad)"
+      />
+
+      {/* 3D "H" Letter */}
+      {/* Back shadow of H */}
+      <g transform="translate(2, 2)">
         <path
-          d="M18 24L21 40H43L47 26H23"
-          stroke="hsl(var(--primary-foreground))"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-        
-        {/* Cart handle */}
-        <path
-          d="M18 24L15 20"
-          stroke="hsl(var(--primary-foreground))"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-        
-        {/* Cart wheels */}
-        <circle cx="25" cy="45" r="3" fill="hsl(var(--primary-foreground))" />
-        <circle cx="39" cy="45" r="3" fill="hsl(var(--primary-foreground))" />
-        
-        {/* POS/checkmark inside cart */}
-        <path
-          d="M27 32L31 36L39 28"
-          stroke="hsl(var(--primary-foreground))"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
+          d="M18 16 L18 44 L24 44 L24 33 L36 33 L36 44 L42 44 L42 16 L36 16 L36 27 L24 27 L24 16 Z"
+          fill="#3730a3"
+          opacity="0.5"
         />
       </g>
       
-      {/* Credit/money indicator - top right */}
-      <g transform="translate(42, 14)">
-        <circle cx="6" cy="6" r="8" fill="hsl(var(--primary-foreground))" />
-        <text
-          x="6"
-          y="10"
-          textAnchor="middle"
-          fill="hsl(var(--primary))"
-          fontSize="10"
-          fontWeight="bold"
-          fontFamily="sans-serif"
-        >
-          $
-        </text>
+      {/* Main H with gradient */}
+      <g filter="url(#innerGlow)">
+        <path
+          d="M17 15 L17 45 L24 45 L24 33 L36 33 L36 45 L43 45 L43 15 L36 15 L36 27 L24 27 L24 15 Z"
+          fill="url(#letterGrad)"
+        />
       </g>
       
-      {/* Bottom shadow for 3D effect */}
-      <ellipse cx="32" cy="60" rx="20" ry="3" fill="black" opacity="0.15" />
+      {/* Subtle inner highlight on H */}
+      <path
+        d="M18 16 L18 26 L23 26 L23 16 Z"
+        fill="#ffffff"
+        opacity="0.3"
+      />
+      <path
+        d="M37 16 L37 26 L42 26 L42 16 Z"
+        fill="#ffffff"
+        opacity="0.3"
+      />
+      
+      {/* Small accent dot for modern feel */}
+      <circle
+        cx="50"
+        cy="14"
+        r="4"
+        fill="#22d3ee"
+      />
+      <circle
+        cx="50"
+        cy="14"
+        r="2"
+        fill="#ffffff"
+        opacity="0.8"
+      />
     </svg>
   );
 };
