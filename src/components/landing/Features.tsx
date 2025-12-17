@@ -34,7 +34,7 @@ const features = [
     icon: Scan,
     title: "Barcode Scanning",
     description: "Scan products instantly using your device camera—great for busy counters and large catalogs.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1621155346337-1d19476ba7d8?w=600&h=400&fit=crop",
     details: [
       "Camera-based barcode scanning",
       "Instant product lookup",
