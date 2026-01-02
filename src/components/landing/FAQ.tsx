@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { HelpCircle } from "lucide-react";
 
 const faqs = [
   {
@@ -42,13 +43,23 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-16 md:py-24 bg-card">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Frequently asked questions
+    <section id="faq" className="py-16 md:py-24 bg-card relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6 animate-bounce-gentle">
+            <HelpCircle className="w-8 h-8 text-primary" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 animate-slide-up" style={{ animationFillMode: 'both' }}>
+            Frequently asked{" "}
+            <span className="animate-text-shimmer">questions</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
             Got questions? We've got answers.
           </p>
         </div>
@@ -59,10 +70,10 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-background rounded-xl px-6 border border-border animate-fade-in hover:border-primary/50 transition-colors"
-                style={{ animationDelay: `${index * 0.05}s`, animationFillMode: 'both' }}
+                className="bg-background rounded-xl px-6 border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 animate-slide-up group"
+                style={{ animationDelay: `${0.1 + index * 0.05}s`, animationFillMode: 'both' }}
               >
-                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-6">
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-6 group-hover:translate-x-1 transition-all duration-300">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-6">

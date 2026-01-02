@@ -151,13 +151,20 @@ const useCases = [
 
 const UseCases = () => {
   return (
-    <section id="use-cases" className="py-16 md:py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Built for your industry
+    <section id="use-cases" className="py-16 md:py-24 bg-muted/30 relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/3 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float-slow" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 animate-slide-up" style={{ animationFillMode: 'both' }}>
+            Built for{" "}
+            <span className="animate-text-shimmer">your industry</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
             HelaPoint adapts to the unique needs of different retail businesses—from corner shops to multi-branch chains.
           </p>
         </div>
@@ -166,28 +173,32 @@ const UseCases = () => {
           {useCases.map((useCase, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-xl transition-all duration-300 hover:border-primary/50 hover:-translate-y-2 animate-fade-in overflow-hidden"
-              style={{ animationDelay: `${index * 0.05}s`, animationFillMode: 'both' }}
+              className="group hover:shadow-2xl transition-all duration-500 hover:border-primary/50 hover:-translate-y-3 animate-slide-up overflow-hidden"
+              style={{ animationDelay: `${0.1 + index * 0.05}s`, animationFillMode: 'both' }}
             >
               <div className="relative h-40 overflow-hidden">
                 <img 
                   src={useCase.image} 
                   alt={useCase.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-                <div className="absolute bottom-3 left-3 w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <useCase.icon className="w-5 h-5 text-primary-foreground" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent group-hover:from-background/90 transition-all duration-500" />
+                <div className="absolute bottom-3 left-3 w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <useCase.icon className="w-5 h-5 text-primary-foreground group-hover:animate-bounce-gentle" />
                 </div>
               </div>
               <CardContent className="p-4">
-                <h3 className="text-lg font-semibold text-foreground mb-3">
+                <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {useCase.title}
                 </h3>
                 <ul className="space-y-1.5">
                   {useCase.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    <li 
+                      key={idx} 
+                      className="flex items-start gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-all duration-300"
+                      style={{ transitionDelay: `${idx * 50}ms` }}
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0 group-hover:scale-150 transition-transform duration-300" />
                       {feature}
                     </li>
                   ))}

@@ -26,69 +26,72 @@ const FeatureIcon = ({ value }: { value: boolean | string }) => {
 
 const Comparison = () => {
   return (
-    <section className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Why Choose HelaPoint?
+    <section className="py-16 md:py-24 relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute bottom-0 right-1/3 w-64 h-64 bg-destructive/5 rounded-full blur-3xl animate-float" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 animate-slide-up" style={{ animationFillMode: 'both' }}>
+            Why Choose{" "}
+            <span className="animate-text-shimmer">HelaPoint?</span>
           </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
             Built for real-world retail challenges—where connectivity can be unreliable, credit is essential, and every sale counts.
           </p>
         </div>
 
         {/* Pain Points */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
-          <Card className="bg-destructive/5 border-destructive/20 animate-fade-in hover:-translate-y-1 transition-transform" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
-            <CardHeader>
-              <CardTitle className="text-lg">Tired of Lost Sales from Outages?</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm">
-                HelaPoint keeps selling even when internet and power are down. Your business never stops.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-destructive/5 border-destructive/20 animate-fade-in hover:-translate-y-1 transition-transform" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
-            <CardHeader>
-              <CardTitle className="text-lg">Manual Credit Books Causing Disputes?</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm">
-                Digital credit tracking with due dates and payment history. No more "I already paid" arguments.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-destructive/5 border-destructive/20 animate-fade-in hover:-translate-y-1 transition-transform" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
-            <CardHeader>
-              <CardTitle className="text-lg">Staff Disputes Over Sales?</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-sm">
-                Multi-cashier login tracks exactly who sold what. Full accountability for every transaction.
-              </p>
-            </CardContent>
-          </Card>
+          {[
+            { title: "Tired of Lost Sales from Outages?", description: "HelaPoint keeps selling even when internet and power are down. Your business never stops." },
+            { title: "Manual Credit Books Causing Disputes?", description: "Digital credit tracking with due dates and payment history. No more \"I already paid\" arguments." },
+            { title: "Staff Disputes Over Sales?", description: "Multi-cashier login tracks exactly who sold what. Full accountability for every transaction." }
+          ].map((pain, index) => (
+            <Card 
+              key={index}
+              className="bg-destructive/5 border-destructive/20 hover:-translate-y-2 hover:shadow-xl transition-all duration-500 group animate-slide-up"
+              style={{ animationDelay: `${0.1 + index * 0.1}s`, animationFillMode: 'both' }}
+            >
+              <CardHeader>
+                <CardTitle className="text-lg group-hover:text-destructive transition-colors duration-300">{pain.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm group-hover:text-foreground transition-colors duration-300">
+                  {pain.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Comparison Table */}
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto animate-slide-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
           <table className="w-full">
             <thead>
               <tr className="border-b border-border">
                 <th className="text-left py-4 px-4 font-semibold text-foreground">Feature</th>
-                <th className="text-center py-4 px-4 font-semibold text-primary">HelaPoint</th>
+                <th className="text-center py-4 px-4 font-semibold text-primary animate-text-shimmer">HelaPoint</th>
                 <th className="text-center py-4 px-4 font-semibold text-muted-foreground">Loyverse</th>
                 <th className="text-center py-4 px-4 font-semibold text-muted-foreground">Square</th>
               </tr>
             </thead>
             <tbody>
               {features.map((feature, index) => (
-                <tr key={index} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
-                  <td className="py-4 px-4 text-foreground">{feature.name}</td>
+                <tr 
+                  key={index} 
+                  className="border-b border-border/50 hover:bg-muted/30 transition-all duration-300 group"
+                  style={{ animationDelay: `${0.5 + index * 0.05}s` }}
+                >
+                  <td className="py-4 px-4 text-foreground group-hover:text-primary group-hover:translate-x-2 transition-all duration-300">{feature.name}</td>
                   <td className="py-4 px-4 text-center">
                     <div className="flex justify-center">
-                      <FeatureIcon value={feature.helapoint} />
+                      <div className="group-hover:scale-125 transition-transform duration-300">
+                        <FeatureIcon value={feature.helapoint} />
+                      </div>
                     </div>
                   </td>
                   <td className="py-4 px-4 text-center">
@@ -107,8 +110,8 @@ const Comparison = () => {
           </table>
         </div>
 
-        <p className="text-center text-sm text-muted-foreground mt-6">
-          <Check className="w-4 h-4 inline text-primary" /> Full support &nbsp;
+        <p className="text-center text-sm text-muted-foreground mt-6 animate-slide-up" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
+          <Check className="w-4 h-4 inline text-primary animate-bounce-gentle" /> Full support &nbsp;
           <Minus className="w-4 h-4 inline text-muted-foreground" /> Partial support &nbsp;
           <X className="w-4 h-4 inline text-muted-foreground/50" /> Not available
         </p>
