@@ -27,17 +27,14 @@ const FeatureIcon = ({ value }: { value: boolean | string }) => {
 const Comparison = () => {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-slow" />
-        <div className="absolute bottom-0 right-1/3 w-64 h-64 bg-destructive/5 rounded-full blur-3xl animate-float" />
-      </div>
+      {/* Mesh gradient background */}
+      <div className="absolute inset-0 mesh-gradient" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 animate-slide-up" style={{ animationFillMode: 'both' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-slide-up" style={{ animationFillMode: 'both' }}>
             Why Choose{" "}
-            <span className="animate-text-shimmer">HelaPoint?</span>
+            <span className="gradient-text">HelaPoint?</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
             Built for real-world retail challenges—where connectivity can be unreliable, credit is essential, and every sale counts.
@@ -53,14 +50,14 @@ const Comparison = () => {
           ].map((pain, index) => (
             <Card 
               key={index}
-              className="bg-destructive/5 border-destructive/20 hover:-translate-y-2 hover:shadow-xl transition-all duration-500 group animate-slide-up"
+              className="glass-strong border-destructive/20 hover:-translate-y-2 hover:shadow-xl transition-all duration-500 group animate-slide-up"
               style={{ animationDelay: `${0.1 + index * 0.1}s`, animationFillMode: 'both' }}
             >
               <CardHeader>
                 <CardTitle className="text-lg group-hover:text-destructive transition-colors duration-300">{pain.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-sm group-hover:text-foreground transition-colors duration-300">
+                <p className="text-muted-foreground text-sm">
                   {pain.description}
                 </p>
               </CardContent>
@@ -69,12 +66,12 @@ const Comparison = () => {
         </div>
 
         {/* Comparison Table */}
-        <div className="overflow-x-auto animate-slide-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+        <div className="glass-strong rounded-2xl p-6 overflow-x-auto animate-slide-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
           <table className="w-full">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left py-4 px-4 font-semibold text-foreground">Feature</th>
-                <th className="text-center py-4 px-4 font-semibold text-primary animate-text-shimmer">HelaPoint</th>
+                <th className="text-left py-4 px-4 font-semibold">Feature</th>
+                <th className="text-center py-4 px-4 font-semibold gradient-text">HelaPoint</th>
                 <th className="text-center py-4 px-4 font-semibold text-muted-foreground">Loyverse</th>
                 <th className="text-center py-4 px-4 font-semibold text-muted-foreground">Square</th>
               </tr>
@@ -83,15 +80,12 @@ const Comparison = () => {
               {features.map((feature, index) => (
                 <tr 
                   key={index} 
-                  className="border-b border-border/50 hover:bg-muted/30 transition-all duration-300 group"
-                  style={{ animationDelay: `${0.5 + index * 0.05}s` }}
+                  className="border-b border-border/50 hover:bg-primary/5 transition-all duration-300 group"
                 >
-                  <td className="py-4 px-4 text-foreground group-hover:text-primary group-hover:translate-x-2 transition-all duration-300">{feature.name}</td>
+                  <td className="py-4 px-4 group-hover:text-primary transition-all duration-300">{feature.name}</td>
                   <td className="py-4 px-4 text-center">
                     <div className="flex justify-center">
-                      <div className="group-hover:scale-125 transition-transform duration-300">
-                        <FeatureIcon value={feature.helapoint} />
-                      </div>
+                      <FeatureIcon value={feature.helapoint} />
                     </div>
                   </td>
                   <td className="py-4 px-4 text-center">
@@ -111,7 +105,7 @@ const Comparison = () => {
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-6 animate-slide-up" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
-          <Check className="w-4 h-4 inline text-primary animate-bounce-gentle" /> Full support &nbsp;
+          <Check className="w-4 h-4 inline text-primary" /> Full support &nbsp;
           <Minus className="w-4 h-4 inline text-muted-foreground" /> Partial support &nbsp;
           <X className="w-4 h-4 inline text-muted-foreground/50" /> Not available
         </p>
